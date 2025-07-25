@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabolik - Finans Platformu</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- TradingView Widget BEGIN -->
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <!-- TradingView Widget END -->
+</head>
+<body>
+    <!-- Header Bölümü -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Parabolik</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#anasayfa" class="active">Anasayfa</a></li>
+                <li><a href="#portfoy">Portföy</a></li>
+                <li><a href="#haberler">Haberler</a></li>
+                <li><a href="#analizler">Analizler</a></li>
+            </ul>
+            <div class="user-menu">
+                <span id="user-name">Hoş Geldiniz</span>
+                <button id="logout-btn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main>
+        <!-- Anasayfa Bölümü -->
+        <section id="anasayfa" class="section active">
+            <div class="hero">
+                <h2>Finans Dünyasına Hoş Geldiniz</h2>
+                <p>Hisse senedi ve kripto para alım-satımını güvenle deneyimleyin</p>
+                <div class="hero-buttons">
+                    <a href="#fikirler" class="hero-btn primary">
+                        <i class="fas fa-lightbulb"></i>
+                        Uzman Fikirleri
+                    </a>
+                    <a href="#portfoy" class="hero-btn secondary">
+                        <i class="fas fa-chart-line"></i>
+                        Portföyüm
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line stat-icon"></i>
+                        <div class="stat-info">
+                            <span class="stat-value">₺1.2T</span>
+                            <span class="stat-label">Günlük İşlem Hacmi</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users stat-icon"></i>
+                        <div class="stat-info">
+                            <span class="stat-value">50K+</span>
+                            <span class="stat-label">Aktif Kullanıcı</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-coins stat-icon"></i>
+                        <div class="stat-info">
+                            <span class="stat-value">100+</span>
+                            <span class="stat-label">İşlem Çifti</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Canlı Piyasa Verileri -->
+            <div class="live-market">
+                <div class="market-header">
+                    <h3>Canlı Piyasa Verileri</h3>
+                    <div class="market-filters">
+                        <button class="filter-btn active" data-filter="all">Tümü</button>
+                        <button class="filter-btn" data-filter="gainers">Yükselenler</button>
+                        <button class="filter-btn" data-filter="losers">Düşenler</button>
+                        <button class="filter-btn" data-filter="volume">Hacim</button>
+                    </div>
+                </div>
+                
+                <div class="market-tabs">
+                    <button class="market-tab active" data-market="crypto">Kripto</button>
+                    <button class="market-tab" data-market="forex">Döviz</button>
+                    <button class="market-tab" data-market="stocks">Hisse</button>
+                </div>
+                
+                <div class="market-content">
+                    <!-- Kripto Piyasası -->
+                    <div class="market-section active" id="crypto-market">
+                        <div class="market-grid">
+                            <!-- Bitcoin -->
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fab fa-bitcoin market-icon"></i>
+                                        <div>
+                                            <h4>BTC/USDT</h4>
+                                            <span class="market-volume">Hacim: $2.5B</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change positive">+2.5%</span>
+                                </div>
+                                <p class="price">₺1,250,000</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">24s Yüksek</span>
+                                        <span class="value">₺1,280,000</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">24s Düşük</span>
+                                        <span class="value">₺1,220,000</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="btc-chart"></div>
+                                <div class="market-news">
+                                    <h5>Son Haberler</h5>
+                                    <ul class="news-list">
+                                        <li class="news-item" data-news-id="btc-news-1">
+                                            <span class="news-title">Bitcoin ETF onayı beklentisi fiyatları yukarı taşıyor</span>
+                                            <span class="news-time">2 saat önce</span>
+                                        </li>
+                                        <li class="news-item" data-news-id="btc-news-2">
+                                            <span class="news-title">Kripto piyasası günlük işlem hacmi rekor kırıyor</span>
+                                            <span class="news-time">4 saat önce</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="technical-analysis">
+                                    <h5>Teknik Analiz</h5>
+                                    <div class="analysis-grid">
+                                        <div class="analysis-item">
+                                            <span class="label">RSI</span>
+                                            <span class="value">65</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">MACD</span>
+                                            <span class="value positive">Alım</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">Bollinger</span>
+                                            <span class="value">Orta Bant</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ethereum -->
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fab fa-ethereum market-icon"></i>
+                                        <div>
+                                            <h4>ETH/USDT</h4>
+                                            <span class="market-volume">Hacim: $1.5B</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change negative">-1.2%</span>
+                                </div>
+                                <p class="price">₺85,000</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">24s Yüksek</span>
+                                        <span class="value">₺87,000</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">24s Düşük</span>
+                                        <span class="value">₺83,000</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="eth-chart"></div>
+                                <div class="market-news">
+                                    <h5>Son Haberler</h5>
+                                    <ul class="news-list">
+                                        <li class="news-item" data-news-id="eth-news-1">
+                                            <span class="news-title">Ethereum 2.0 güncellemesi yaklaşıyor</span>
+                                            <span class="news-time">1 saat önce</span>
+                                        </li>
+                                        <li class="news-item" data-news-id="eth-news-2">
+                                            <span class="news-title">Ethereum günlük işlem hacmi rekor kırıyor</span>
+                                            <span class="news-time">3 saat önce</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="technical-analysis">
+                                    <h5>Teknik Analiz</h5>
+                                    <div class="analysis-grid">
+                                        <div class="analysis-item">
+                                            <span class="label">RSI</span>
+                                            <span class="value">55</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">MACD</span>
+                                            <span class="value neutral">Yatay</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">Bollinger</span>
+                                            <span class="value">Üst Bant</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Solana -->
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-sun market-icon"></i>
+                                        <div>
+                                            <h4>SOL/USDT</h4>
+                                            <span class="market-volume">Hacim: $800M</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change positive">+5.8%</span>
+                                </div>
+                                <p class="price">₺2,500</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">24s Yüksek</span>
+                                        <span class="value">₺2,600</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">24s Düşük</span>
+                                        <span class="value">₺2,400</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="sol-chart"></div>
+                                <div class="market-news">
+                                    <h5>Son Haberler</h5>
+                                    <ul class="news-list">
+                                        <li class="news-item" data-news-id="sol-news-1">
+                                            <span class="news-title">Solana ağı yeni güncelleme ile hızlanıyor</span>
+                                            <span class="news-time">2 saat önce</span>
+                                        </li>
+                                        <li class="news-item" data-news-id="sol-news-2">
+                                            <span class="news-title">Solana ekosistemi büyümeye devam ediyor</span>
+                                            <span class="news-time">5 saat önce</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="technical-analysis">
+                                    <h5>Teknik Analiz</h5>
+                                    <div class="analysis-grid">
+                                        <div class="analysis-item">
+                                            <span class="label">RSI</span>
+                                            <span class="value">70</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">MACD</span>
+                                            <span class="value positive">Alım</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">Bollinger</span>
+                                            <span class="value">Üst Bant</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cardano -->
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-cube market-icon"></i>
+                                        <div>
+                                            <h4>ADA/USDT</h4>
+                                            <span class="market-volume">Hacim: $500M</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change positive">+3.2%</span>
+                                </div>
+                                <p class="price">₺12.50</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">24s Yüksek</span>
+                                        <span class="value">₺13.00</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">24s Düşük</span>
+                                        <span class="value">₺12.00</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="ada-chart"></div>
+                                <div class="market-news">
+                                    <h5>Son Haberler</h5>
+                                    <ul class="news-list">
+                                        <li class="news-item" data-news-id="ada-news-1">
+                                            <span class="news-title">Cardano yeni geliştirmeleri duyurdu</span>
+                                            <span class="news-time">1 saat önce</span>
+                                        </li>
+                                        <li class="news-item" data-news-id="ada-news-2">
+                                            <span class="news-title">Cardano ekosistemi genişliyor</span>
+                                            <span class="news-time">4 saat önce</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="technical-analysis">
+                                    <h5>Teknik Analiz</h5>
+                                    <div class="analysis-grid">
+                                        <div class="analysis-item">
+                                            <span class="label">RSI</span>
+                                            <span class="value">60</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">MACD</span>
+                                            <span class="value positive">Alım</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">Bollinger</span>
+                                            <span class="value">Orta Bant</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Polkadot -->
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-circle-dot market-icon"></i>
+                                        <div>
+                                            <h4>DOT/USDT</h4>
+                                            <span class="market-volume">Hacim: $400M</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change negative">-0.8%</span>
+                                </div>
+                                <p class="price">₺85.00</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">24s Yüksek</span>
+                                        <span class="value">₺88.00</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">24s Düşük</span>
+                                        <span class="value">₺82.00</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="dot-chart"></div>
+                                <div class="market-news">
+                                    <h5>Son Haberler</h5>
+                                    <ul class="news-list">
+                                        <li class="news-item" data-news-id="dot-news-1">
+                                            <span class="news-title">Polkadot yeni parachain projelerini duyurdu</span>
+                                            <span class="news-time">3 saat önce</span>
+                                        </li>
+                                        <li class="news-item" data-news-id="dot-news-2">
+                                            <span class="news-title">Polkadot ekosistemi büyümeye devam ediyor</span>
+                                            <span class="news-time">6 saat önce</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="technical-analysis">
+                                    <h5>Teknik Analiz</h5>
+                                    <div class="analysis-grid">
+                                        <div class="analysis-item">
+                                            <span class="label">RSI</span>
+                                            <span class="value">45</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">MACD</span>
+                                            <span class="value neutral">Yatay</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">Bollinger</span>
+                                            <span class="value">Alt Bant</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Avalanche -->
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-snowflake market-icon"></i>
+                                        <div>
+                                            <h4>AVAX/USDT</h4>
+                                            <span class="market-volume">Hacim: $300M</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change positive">+4.5%</span>
+                                </div>
+                                <p class="price">₺450.00</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">24s Yüksek</span>
+                                        <span class="value">₺460.00</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">24s Düşük</span>
+                                        <span class="value">₺440.00</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="avax-chart"></div>
+                                <div class="market-news">
+                                    <h5>Son Haberler</h5>
+                                    <ul class="news-list">
+                                        <li class="news-item" data-news-id="avax-news-1">
+                                            <span class="news-title">Avalanche yeni DeFi projelerini duyurdu</span>
+                                            <span class="news-time">2 saat önce</span>
+                                        </li>
+                                        <li class="news-item" data-news-id="avax-news-2">
+                                            <span class="news-title">Avalanche ağı yeni güncelleme ile hızlanıyor</span>
+                                            <span class="news-time">4 saat önce</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="technical-analysis">
+                                    <h5>Teknik Analiz</h5>
+                                    <div class="analysis-grid">
+                                        <div class="analysis-item">
+                                            <span class="label">RSI</span>
+                                            <span class="value">68</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">MACD</span>
+                                            <span class="value positive">Alım</span>
+                                        </div>
+                                        <div class="analysis-item">
+                                            <span class="label">Bollinger</span>
+                                            <span class="value">Üst Bant</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Döviz Piyasası -->
+                    <div class="market-section" id="forex-market">
+                        <div class="market-grid">
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-dollar-sign market-icon"></i>
+                                        <div>
+                                            <h4>USD/TRY</h4>
+                                            <span class="market-volume">Hacim: ₺1.5B</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change positive">+0.3%</span>
+                                </div>
+                                <p class="price">₺31.25</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">24s Yüksek</span>
+                                        <span class="value">₺31.50</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">24s Düşük</span>
+                                        <span class="value">₺31.00</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="usd-chart"></div>
+                            </div>
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-euro-sign market-icon"></i>
+                                        <div>
+                                            <h4>EUR/TRY</h4>
+                                            <span class="market-volume">Hacim: ₺1.2B</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change negative">-0.1%</span>
+                                </div>
+                                <p class="price">₺33.85</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">24s Yüksek</span>
+                                        <span class="value">₺34.00</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">24s Düşük</span>
+                                        <span class="value">₺33.70</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="eur-chart"></div>
+                            </div>
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-pound-sign market-icon"></i>
+                                        <div>
+                                            <h4>GBP/TRY</h4>
+                                            <span class="market-volume">Hacim: ₺1.0B</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change positive">+0.2%</span>
+                                </div>
+                                <p class="price">₺39.45</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">24s Yüksek</span>
+                                        <span class="value">₺39.70</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">24s Düşük</span>
+                                        <span class="value">₺39.20</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="gbp-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hisse Senedi Piyasası -->
+                    <div class="market-section" id="stocks-market">
+                        <div class="market-grid">
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-plane market-icon"></i>
+                                        <div>
+                                            <h4>THYAO</h4>
+                                            <span class="market-volume">Hacim: ₺250M</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change positive">+1.5%</span>
+                                </div>
+                                <p class="price">₺125.50</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">Günlük Yüksek</span>
+                                        <span class="value">₺128.00</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">Günlük Düşük</span>
+                                        <span class="value">₺122.00</span>
+                                    </div>
+                                </div>
+                                <div class="market-chart" id="thyao-chart"></div>
+                                <div class="company-info">
+                                    <h5>Şirket Bilgileri</h5>
+                                    <div class="info-grid">
+                                        <div class="info-item">
+                                            <span class="label">Piyasa Değeri</span>
+                                            <span class="value">₺85.2B</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="label">F/K Oranı</span>
+                                            <span class="value">12.5</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="label">Temettü Verimi</span>
+                                            <span class="value">%2.8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="market-news">
+                                    <h5>Şirket Haberleri</h5>
+                                    <ul class="news-list">
+                                        <li>THY, yeni uçak siparişlerini açıkladı</li>
+                                        <li>Yolcu sayısı geçen yılın aynı dönemine göre %25 arttı</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-university market-icon"></i>
+                                        <div>
+                                            <h4>GARAN</h4>
+                                            <span class="market-volume">Hacim: ₺100M</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change negative">-0.8%</span>
+                                </div>
+                                <p class="price">₺85.75</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">Günlük Yüksek</span>
+                                        <span class="value">₺86.50</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">Günlük Düşük</span>
+                                        <span class="value">₺84.50</span>
+                                    </div>
+
+                                </div>
+                                <div class="market-chart" id="garan-chart"></div>
+                                <div class="company-info">
+                                    <h5>Şirket Bilgileri</h5>
+                                    <div class="info-grid">
+                                        <div class="info-item">
+                                            <span class="label">Piyasa Değeri</span>
+                                            <span class="value">₺15.2B</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="label">F/K Oranı</span>
+                                            <span class="value">10.5</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="label">Temettü Verimi</span>
+                                            <span class="value">%1.8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="market-news">
+                                    <h5>Şirket Haberleri</h5>
+                                    <ul class="news-list">
+                                        <li>GARAN, yeni uçak siparişlerini açıkladı</li>
+                                        <li>Yolcu sayısı geçen yılın aynı dönemine göre %15 azaldı</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="market-card">
+                                <div class="market-header">
+                                    <div class="market-info">
+                                        <i class="fas fa-microchip market-icon"></i>
+                                        <div>
+                                            <h4>ASELS</h4>
+                                            <span class="market-volume">Hacim: ₺75M</span>
+                                        </div>
+                                    </div>
+                                    <span class="market-change positive">+2.1%</span>
+                                </div>
+                                <p class="price">₺45.30</p>
+                                <div class="market-stats">
+                                    <div class="stat">
+                                        <span class="label">Günlük Yüksek</span>
+                                        <span class="value">₺46.00</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">Günlük Düşük</span>
+                                        <span class="value">₺44.50</span>
+                                    </div>
+
+                                </div>
+                                <div class="market-chart" id="asels-chart"></div>
+                                <div class="company-info">
+                                    <h5>Şirket Bilgileri</h5>
+                                    <div class="info-grid">
+                                        <div class="info-item">
+                                            <span class="label">Piyasa Değeri</span>
+                                            <span class="value">₺10.2B</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="label">F/K Oranı</span>
+                                            <span class="value">15.5</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="label">Temettü Verimi</span>
+                                            <span class="value">%3.8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="market-news">
+                                    <h5>Şirket Haberleri</h5>
+                                    <ul class="news-list">
+                                        <li>ASELS, yeni uçak siparişlerini açıkladı</li>
+                                        <li>Yolcu sayısı geçen yılın aynı dönemine göre %10 arttı</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Uzman Analizleri -->
+            <div class="expert-analysis">
+                <h3>Uzman Analizleri</h3>
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <div class="expert-info">
+                            <i class="fas fa-user-tie expert-avatar"></i>
+                            <div>
+                                <h4>Ahmet Yılmaz</h4>
+                                <span class="expert-title">Kıdemli Analist</span>
+                            </div>
+                        </div>
+                        <div class="analysis-content">
+                            <h5>THYAO Teknik Analiz</h5>
+                            <div class="technical-indicators">
+                                <div class="indicator">
+                                    <span class="label">RSI</span>
+                                    <span class="value">65</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">MACD</span>
+                                    <span class="value positive">Alım</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">Bollinger</span>
+                                    <span class="value">Orta Bant</span>
+                                </div>
+                            </div>
+                            <p class="analysis-text">
+                                "THYAO, teknik göstergelerde güçlü alım sinyalleri veriyor. RSI 65 seviyesinde ve MACD pozitif bölgede. Kısa vadede ₺130 hedefini görebiliriz."
+                            </p>
+                            <div class="analysis-targets">
+                                <div class="target">
+                                    <span class="label">Hedef</span>
+                                    <span class="value">₺130.00</span>
+                                </div>
+                                <div class="target">
+                                    <span class="label">Stop</span>
+                                    <span class="value">₺120.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="expert-info">
+                            <i class="fas fa-user-tie expert-avatar"></i>
+                            <div>
+                                <h4>Ayşe Kaya</h4>
+                                <span class="expert-title">Kıdemli Analist</span>
+                            </div>
+                        </div>
+                        <div class="analysis-content">
+                            <h5>Ethereum Teknik Analiz</h5>
+                            <div class="technical-indicators">
+                                <div class="indicator">
+                                    <span class="label">RSI</span>
+                                    <span class="value">55</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">MACD</span>
+                                    <span class="value neutral">Yatay</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">Bollinger</span>
+                                    <span class="value">Üst Bant</span>
+                                </div>
+                            </div>
+                            <p class="analysis-text">
+                                "Ethereum, konsolidasyon sürecinde. RSI 55 seviyesinde ve MACD yatay. Kısa vadede $3,500 hedefini görebiliriz."
+                            </p>
+                            <div class="analysis-targets">
+                                <div class="target">
+                                    <span class="label">Hedef</span>
+                                    <span class="value">$3,500</span>
+                                </div>
+                                <div class="target">
+                                    <span class="label">Stop</span>
+                                    <span class="value">$3,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portföy Bölümü -->
+        <section id="portfoy" class="section">
+            <div class="portfolio-container">
+                <div class="balance-card">
+                    <h3>Bakiye</h3>
+                    <p class="balance">₺100,000.00</p>
+                </div>
+                <div class="trading-section">
+                    <h3>Alım-Satım</h3>
+                    <form id="trading-form">
+                        <select id="asset-type" required>
+                            <option value="">Varlık Seçin</option>
+                            <option value="BTC">Bitcoin (BTC)</option>
+                            <option value="ETH">Ethereum (ETH)</option>
+                            <option value="THYAO">Türk Hava Yolları</option>
+                        </select>
+                        <input type="number" id="amount" placeholder="Miktar" required>
+                        <input type="number" id="price" placeholder="Fiyat" required>
+                        <div class="trade-buttons">
+                            <button type="button" class="buy-btn">Al</button>
+                            <button type="button" class="sell-btn">Sat</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="portfolio-list">
+                    <h3>Portföyüm</h3>
+                    <table id="portfolio-table">
+                        <thead>
+                            <tr>
+                                <th>Varlık</th>
+                                <th>Miktar</th>
+                                <th>Ort. Alış</th>
+                                <th>Güncel Değer</th>
+                                <th>Kar/Zarar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="portfolio-body">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="transaction-history">
+                    <h3>İşlem Geçmişi</h3>
+                    <table id="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>Tarih</th>
+                                <th>İşlem</th>
+                                <th>Varlık</th>
+                                <th>Miktar</th>
+                                <th>Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transaction-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Haberler Bölümü -->
+        <section id="haberler" class="section">
+            <div class="news-container">
+                <h2>Güncel Haberler</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Haber Görseli">
+                        <div class="news-content">
+                            <h3>Bitcoin Yeni Rekor Seviyeye Ulaştı</h3>
+                            <p>Bitcoin, küresel piyasalardaki olumlu hava ile birlikte yeni rekor seviyesine ulaştı...</p>
+                            <a href="#" class="read-more">Devamını Oku</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Haber Görseli">
+                        <div class="news-content">
+                            <h3>Merkez Bankası Faiz Kararını Açıkladı</h3>
+                            <p>Merkez Bankası, beklenen faiz kararını açıkladı. Piyasalar kararı nasıl değerlendiriyor?</p>
+                            <a href="#" class="read-more">Devamını Oku</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Haber Görseli">
+                        <div class="news-content">
+                            <h3>Ethereum 2.0 Güncellemesi Yaklaşıyor</h3>
+                            <p>Ethereum ağı, büyük güncelleme öncesi son hazırlıklarını tamamlıyor...</p>
+                            <a href="#" class="read-more">Devamını Oku</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analizler Bölümü -->
+        <section id="analizler" class="section">
+            <div class="analysis-container">
+                <h2>Uzman Analizleri</h2>
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <div class="analysis-header">
+                            <h3>Bitcoin (BTC)</h3>
+                            <span class="trend positive">Yükseliş</span>
+                        </div>
+                        <div class="analysis-content">
+                            <div class="technical-info">
+                                <p><strong>Destek:</strong> $45,000</p>
+                                <p><strong>Direnç:</strong> $52,000</p>
+                            </div>
+                            <p class="expert-comment">
+                                "Bitcoin, teknik göstergelerde güçlü alım sinyalleri veriyor. Kısa vadede yükseliş trendi devam edebilir."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-header">
+                            <h3>Ethereum (ETH)</h3>
+                            <span class="trend neutral">Yatay</span>
+                        </div>
+                        <div class="analysis-content">
+                            <div class="technical-info">
+                                <p><strong>Destek:</strong> $3,000</p>
+                                <p><strong>Direnç:</strong> $3,500</p>
+                            </div>
+                            <p class="expert-comment">
+                                "Ethereum, konsolidasyon sürecinde. Yeni bir yön için katalizör bekleniyor."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-header">
+                            <h3>THYAO</h3>
+                            <span class="trend negative">Düşüş</span>
+                        </div>
+                        <div class="analysis-content">
+                            <div class="technical-info">
+                                <p><strong>Destek:</strong> ₺120</p>
+                                <p><strong>Direnç:</strong> ₺135</p>
+                            </div>
+                            <p class="expert-comment">
+                                "Havacılık sektöründeki belirsizlikler nedeniyle kısa vadede düşüş riski mevcut."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fikirler Bölümü -->
+        <section id="fikirler" class="section">
+            <div class="ideas-container">
+                <h2>Uzman Fikirleri</h2>
+                <div class="ideas-filters">
+                    <button class="filter-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn" data-filter="buy">Alış</button>
+                    <button class="filter-btn" data-filter="sell">Satış</button>
+                    <button class="filter-btn" data-filter="hold">Bekle</button>
+                </div>
+                
+                <div class="ideas-grid">
+                    <!-- Bitcoin Fikri -->
+                    <div class="idea-card">
+                        <div class="idea-header">
+                            <div class="asset-info">
+                                <i class="fab fa-bitcoin market-icon"></i>
+                                <div>
+                                    <h4>Bitcoin (BTC)</h4>
+                                    <span class="current-price">₺1,250,000</span>
+                                </div>
+                            </div>
+                            <span class="idea-type buy">Alış</span>
+                        </div>
+                        <div class="idea-chart" id="btc-idea-chart"></div>
+                        <div class="idea-analysis">
+                            <div class="technical-indicators">
+                                <div class="indicator">
+                                    <span class="label">RSI</span>
+                                    <span class="value">65</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">MACD</span>
+                                    <span class="value positive">Alım</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">Bollinger</span>
+                                    <span class="value">Orta Bant</span>
+                                </div>
+                            </div>
+                            <div class="idea-targets">
+                                <div class="target">
+                                    <span class="label">Hedef</span>
+                                    <span class="value">₺1,350,000</span>
+                                </div>
+                                <div class="target">
+                                    <span class="label">Stop</span>
+                                    <span class="value">₺1,200,000</span>
+                                </div>
+                            </div>
+                            <p class="idea-text">
+                                "Bitcoin, teknik göstergelerde güçlü alım sinyalleri veriyor. RSI 65 seviyesinde ve MACD pozitif bölgede. Kısa vadede ₺1,350,000 hedefini görebiliriz."
+                            </p>
+                            <div class="expert-info">
+                                <i class="fas fa-user-tie expert-avatar"></i>
+                                <div>
+                                    <h5>Ahmet Yılmaz</h5>
+                                    <span class="expert-title">Kıdemli Analist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ethereum Fikri -->
+                    <div class="idea-card">
+                        <div class="idea-header">
+                            <div class="asset-info">
+                                <i class="fab fa-ethereum market-icon"></i>
+                                <div>
+                                    <h4>Ethereum (ETH)</h4>
+                                    <span class="current-price">₺85,000</span>
+                                </div>
+                            </div>
+                            <span class="idea-type hold">Bekle</span>
+                        </div>
+                        <div class="idea-chart" id="eth-idea-chart"></div>
+                        <div class="idea-analysis">
+                            <div class="technical-indicators">
+                                <div class="indicator">
+                                    <span class="label">RSI</span>
+                                    <span class="value">55</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">MACD</span>
+                                    <span class="value neutral">Yatay</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">Bollinger</span>
+                                    <span class="value">Üst Bant</span>
+                                </div>
+                            </div>
+                            <div class="idea-targets">
+                                <div class="target">
+                                    <span class="label">Hedef</span>
+                                    <span class="value">₺90,000</span>
+                                </div>
+                                <div class="target">
+                                    <span class="label">Stop</span>
+                                    <span class="value">₺80,000</span>
+                                </div>
+                            </div>
+                            <p class="idea-text">
+                                "Ethereum, konsolidasyon sürecinde. RSI 55 seviyesinde ve MACD yatay. Yeni bir yön için katalizör bekleniyor. Şu an için pozisyon almak yerine beklemek daha mantıklı."
+                            </p>
+                            <div class="expert-info">
+                                <i class="fas fa-user-tie expert-avatar"></i>
+                                <div>
+                                    <h5>Ayşe Kaya</h5>
+                                    <span class="expert-title">Kıdemli Analist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- THYAO Fikri -->
+                    <div class="idea-card">
+                        <div class="idea-header">
+                            <div class="asset-info">
+                                <i class="fas fa-plane market-icon"></i>
+                                <div>
+                                    <h4>THYAO</h4>
+                                    <span class="current-price">₺125.50</span>
+                                </div>
+                            </div>
+                            <span class="idea-type sell">Satış</span>
+                        </div>
+                        <div class="idea-chart" id="thyao-idea-chart"></div>
+                        <div class="idea-analysis">
+                            <div class="technical-indicators">
+                                <div class="indicator">
+                                    <span class="label">RSI</span>
+                                    <span class="value">75</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">MACD</span>
+                                    <span class="value negative">Satım</span>
+                                </div>
+                                <div class="indicator">
+                                    <span class="label">Bollinger</span>
+                                    <span class="value">Üst Bant</span>
+                                </div>
+                            </div>
+                            <div class="idea-targets">
+                                <div class="target">
+                                    <span class="label">Hedef</span>
+                                    <span class="value">₺115.00</span>
+                                </div>
+                                <div class="target">
+                                    <span class="label">Stop</span>
+                                    <span class="value">₺130.00</span>
+                                </div>
+                            </div>
+                            <p class="idea-text">
+                                "THYAO, aşırı alım bölgesinde. RSI 75 seviyesinde ve MACD satış sinyali veriyor. Kısa vadede düşüş bekliyoruz. Mevcut pozisyonları kapatmak veya kısa pozisyon almak düşünülebilir."
+                            </p>
+                            <div class="expert-info">
+                                <i class="fas fa-user-tie expert-avatar"></i>
+                                <div>
+                                    <h5>Mehmet Demir</h5>
+                                    <span class="expert-title">Kıdemli Analist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oyunlaştırma Bölümü -->
+        <section id="gamification" class="section">
+            <div class="container">
+                <h2>Oyunlaştırma</h2>
+                
+                <!-- Kullanıcı Seviyesi ve XP -->
+                <div class="user-level-card">
+                    <div class="level-info">
+                        <div class="level-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="level-details">
+                            <h3>Seviye 5</h3>
+                            <div class="xp-bar">
+                                <div class="xp-progress" style="width: 75%"></div>
+                            </div>
+                            <p>750/1000 XP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Günlük Görevler -->
+                <div class="daily-tasks">
+                    <h3>Günlük Görevler</h3>
+                    <div class="tasks-grid">
+                        <div class="task-card">
+                            <div class="task-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="task-info">
+                                <h4>Hisse Analizi Oku</h4>
+                                <p>Bugün 1 hisse analizi oku</p>
+                                <div class="task-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 0%"></div>
+                                    </div>
+                                    <span>0/1</span>
+                                </div>
+                                <span class="task-reward">+50 XP</span>
+                            </div>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="task-info">
+                                <h4>Portföy Performansı</h4>
+                                <p>Portföyünü 5 gün üst üste yeşilde tut</p>
+                                <div class="task-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 60%"></div>
+                                    </div>
+                                    <span>3/5</span>
+                                </div>
+                                <span class="task-reward">+500 XP</span>
+                            </div>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-icon">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div class="task-info">
+                                <h4>Yorum Yap</h4>
+                                <p>Bir analiz hakkında yorum yap</p>
+                                <div class="task-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 0%"></div>
+                                    </div>
+                                    <span>0/1</span>
+                                </div>
+                                <span class="task-reward">+30 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Başarı Rozetleri -->
+                <div class="achievements">
+                    <h3>Başarı Rozetleri</h3>
+                    <div class="badges-grid">
+                        <div class="badge-card locked">
+                            <div class="badge-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>Yatırım Ustası</h4>
+                            <p>1000 XP kazan</p>
+                        </div>
+
+                        <div class="badge-card">
+                            <div class="badge-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>Portföy Yöneticisi</h4>
+                            <p>5 farklı varlık ekle</p>
+                        </div>
+
+                        <div class="badge-card locked">
+                            <div class="badge-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4>Hızlı Yatırımcı</h4>
+                            <p>10 işlem gerçekleştir</p>
+                        </div>
+
+                        <div class="badge-card locked">
+                            <div class="badge-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>Analiz Uzmanı</h4>
+                            <p>20 analiz oku</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI Sohbet Asistanı -->
+    <div class="chat-widget">
+        <button class="chat-toggle">
+            <i class="fas fa-robot"></i>
+            <span>AI Asistan</span>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>Parabolik Asistan</h3>
+                <button class="close-chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages">
+                <div class="message ai">
+                    <div class="message-content">
+                        <i class="fas fa-robot"></i>
+                        <p>Merhaba! Ben Parabolik AI Asistanı. Size yatırım tavsiyeleri ve piyasa analizleri konusunda yardımcı olabilirim. Nasıl yardımcı olabilirim?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Mesajınızı yazın...">
+                <button class="send-message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bölümü -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Parabolik</h4>
+                <p>Finans dünyasında güvenilir adresiniz</p>
+            </div>
+            <div class="footer-section">
+                <h4>İletişim</h4>
+                <p>Email: info@parabolik.com</p>
+                <p>Tel: +90 (212) 123 45 67</p>
+            </div>
+            <div class="footer-section">
+                <h4>Sosyal Medya</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Parabolik. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Haber Detay Modal -->
+    <div id="news-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="news-detail">
+                <h3 class="news-detail-title"></h3>
+                <div class="news-detail-meta">
+                    <span class="news-detail-time"></span>
+                    <span class="news-detail-source"></span>
+                </div>
+                <div class="news-detail-content"></div>
+                <div class="news-detail-expert">
+                    <h4>Uzman Görüşü</h4>
+                    <div class="expert-opinion">
+                        <img src="" alt="Uzman" class="expert-avatar">
+                        <div class="expert-info">
+                            <h5 class="expert-name"></h5>
+                            <p class="expert-title"></p>
+                            <p class="expert-comment"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="market.js"></script>
+</body>
+</html> 

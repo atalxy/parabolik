@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabolik - Giriş/Kayıt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="logo">
+                <h1>Parabolik</h1>
+            </div>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Giriş</button>
+                <button class="auth-tab" data-tab="register">Kayıt</button>
+            </div>
+            
+            <!-- Giriş Formu -->
+            <form id="login-form" class="auth-form active">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="E-posta" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Şifre" required>
+                </div>
+                <button type="submit" class="auth-button">Giriş Yap</button>
+                <div class="social-login">
+                    <p>veya şununla giriş yap:</p>
+                    <div class="social-buttons">
+                        <button type="button" class="google-btn">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button type="button" class="facebook-btn">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Kayıt Formu -->
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Ad Soyad" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="E-posta" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Şifre" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Şifre Tekrar" required>
+                </div>
+                <button type="submit" class="auth-button">Kayıt Ol</button>
+            </form>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html> 

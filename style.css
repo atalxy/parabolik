@@ -1,0 +1,1922 @@
+/* Genel Stiller */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --card-background: #ffffff;
+    --border-color: #e2e8f0;
+    --positive-color: #22c55e;
+    --negative-color: #ef4444;
+    --neutral-color: #64748b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Header ve Navigasyon */
+.navbar {
+    background-color: var(--card-background);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Ana İçerik */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Hero Bölümü */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-btn i {
+    font-size: 1.2rem;
+}
+
+.hero-btn.primary {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.hero-btn.primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+.hero-btn.secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid white;
+}
+
+.hero-btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Market Kartları */
+.market-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.market-card {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.market-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.market-card h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.change {
+    font-weight: 500;
+}
+
+.change.positive {
+    color: var(--positive-color);
+}
+
+.change.negative {
+    color: var(--negative-color);
+}
+
+/* Portföy Bölümü */
+.portfolio-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.balance-card {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.balance {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.trading-section {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#trading-form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#trading-form select,
+#trading-form input {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.trade-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.buy-btn,
+.sell-btn {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buy-btn {
+    background-color: var(--positive-color);
+    color: white;
+}
+
+.sell-btn {
+    background-color: var(--negative-color);
+    color: white;
+}
+
+/* Tablolar */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+/* Haberler Bölümü */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.news-card {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-content h3 {
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Analizler Bölümü */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.analysis-card {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.trend {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.trend.positive {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: var(--positive-color);
+}
+
+.trend.negative {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--negative-color);
+}
+
+.trend.neutral {
+    background-color: rgba(100, 116, 139, 0.1);
+    color: var(--neutral-color);
+}
+
+.technical-info {
+    margin-bottom: 1rem;
+}
+
+.expert-comment {
+    font-style: italic;
+    color: var(--neutral-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--card-background);
+    padding: 3rem 2rem 1rem;
+    margin-top: 4rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .market-cards,
+    .news-grid,
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Kullanıcı Menüsü */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#user-name {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+/* Canlı Piyasa Verileri */
+.live-market {
+    margin-top: 2rem;
+}
+
+.market-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.market-tab {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: none;
+    color: var(--text-color);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.market-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.market-section {
+    display: none;
+}
+
+.market-section.active {
+    display: block;
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.market-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.market-header h4 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.market-change {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.market-change.positive {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: var(--positive-color);
+}
+
+.market-change.negative {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--negative-color);
+}
+
+.market-chart {
+    height: 100px;
+    margin-top: 1rem;
+}
+
+/* TradingView Widget */
+.trading-view-container {
+    margin-top: 2rem;
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#tradingview-widget {
+    height: 500px;
+    margin-top: 1rem;
+}
+
+/* Responsive Tasarım Güncellemeleri */
+@media (max-width: 768px) {
+    .market-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .market-tab {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #tradingview-widget {
+        height: 300px;
+    }
+}
+
+/* Market Header */
+.market-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.market-filters {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: var(--text-color);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Market Info */
+.market-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.asset-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.market-volume {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+}
+
+/* Market Stats */
+.market-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat .label {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+}
+
+.stat .value {
+    font-weight: 500;
+}
+
+/* Company Info */
+.company-info {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-item .label {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+}
+
+.info-item .value {
+    font-weight: 500;
+}
+
+/* Market News */
+.market-news {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.market-news h5 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-list li {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.news-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Expert Analysis */
+.expert-analysis {
+    margin-top: 3rem;
+}
+
+.expert-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.expert-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.expert-info h4,
+.expert-info h5 {
+    margin: 0;
+    font-size: 1rem;
+    color: #1f2937;
+}
+
+.expert-title {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.technical-indicators {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.indicator {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+}
+
+.indicator .label {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+}
+
+.indicator .value {
+    font-weight: 500;
+}
+
+.indicator .value.positive {
+    color: var(--positive-color);
+}
+
+.indicator .value.negative {
+    color: var(--negative-color);
+}
+
+.analysis-text {
+    margin: 1rem 0;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.analysis-targets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.target {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+}
+
+.target .label {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+}
+
+.target .value {
+    font-weight: 500;
+}
+
+/* Responsive Updates */
+@media (max-width: 768px) {
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .market-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .market-filters {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .technical-indicators {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Market İkonları */
+.market-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(33, 150, 243, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.market-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Stat İkonları */
+.stat-icon {
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.stat-icon:hover {
+    transform: rotate(360deg);
+}
+
+/* İkon Renkleri */
+.fa-bitcoin {
+    color: #F7931A;
+}
+
+.fa-ethereum {
+    color: #627EEA;
+}
+
+.fa-dollar-sign {
+    color: #85BB65;
+}
+
+.fa-euro-sign {
+    color: #003399;
+}
+
+.fa-pound-sign {
+    color: #B22222;
+}
+
+.fa-plane {
+    color: #1E90FF;
+}
+
+.fa-university {
+    color: #FFD700;
+}
+
+.fa-microchip {
+    color: #00CED1;
+}
+
+/* İkon Animasyonları */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.market-icon {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive İkonlar */
+@media (max-width: 768px) {
+    .market-icon {
+        font-size: 1.2rem;
+        width: 35px;
+        height: 35px;
+    }
+
+    .stat-icon {
+        font-size: 1.2rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .expert-avatar {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+/* Fikirler Bölümü */
+.ideas-container {
+    padding: 2rem 0;
+}
+
+.ideas-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.idea-card {
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.idea-card:hover {
+    transform: translateY(-5px);
+}
+
+.idea-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.idea-type {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.idea-type.buy {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: var(--positive-color);
+}
+
+.idea-type.sell {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--negative-color);
+}
+
+.idea-type.hold {
+    background-color: rgba(100, 116, 139, 0.1);
+    color: var(--neutral-color);
+}
+
+.idea-chart {
+    height: 200px;
+    margin-bottom: 1.5rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+}
+
+.idea-analysis {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.technical-indicators {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.indicator {
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.indicator .label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+    margin-bottom: 0.5rem;
+}
+
+.indicator .value {
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.indicator .value.positive {
+    color: var(--positive-color);
+}
+
+.indicator .value.negative {
+    color: var(--negative-color);
+}
+
+.indicator .value.neutral {
+    color: var(--neutral-color);
+}
+
+.idea-targets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.target {
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.target .label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+    margin-bottom: 0.5rem;
+}
+
+.target .value {
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.idea-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.expert-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.expert-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.expert-title {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .ideas-filters {
+        justify-content: center;
+    }
+    
+    .ideas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .technical-indicators {
+        grid-template-columns: 1fr;
+    }
+    
+    .idea-targets {
+        grid-template-columns: 1fr;
+    }
+    
+    .idea-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .asset-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Haber Detayları */
+.news-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    background-color: var(--background-color);
+}
+
+.news-title {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.news-time {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--card-background);
+    margin: 5% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--neutral-color);
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--text-color);
+}
+
+.news-detail {
+    margin-top: 1rem;
+}
+
+.news-detail-title {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.news-detail-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--neutral-color);
+    font-size: 0.875rem;
+}
+
+.news-detail-content {
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.news-detail-expert {
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.news-detail-expert h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.expert-opinion {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.expert-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.expert-info {
+    flex: 1;
+}
+
+.expert-name {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.expert-title {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+    margin-bottom: 0.5rem;
+}
+
+.expert-comment {
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
+
+    .expert-opinion {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .expert-avatar {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Teknik Analiz Stilleri */
+.technical-analysis {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+}
+
+.technical-analysis h5 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.analysis-item {
+    background-color: var(--card-background);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-item .label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--neutral-color);
+    margin-bottom: 0.25rem;
+}
+
+.analysis-item .value {
+    display: block;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.analysis-item .value.positive {
+    color: var(--positive-color);
+}
+
+.analysis-item .value.negative {
+    color: var(--negative-color);
+}
+
+.analysis-item .value.neutral {
+    color: var(--neutral-color);
+}
+
+/* Yeni Kripto Para İkonları */
+.fa-circle-dot {
+    color: #E6007A;
+}
+
+.fa-snowflake {
+    color: #E84142;
+}
+
+/* Market Kartı Güncellemeleri */
+.market-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.market-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.market-header {
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.market-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.market-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.market-icon:hover {
+    transform: scale(1.1);
+}
+
+.market-change {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.market-change.positive {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: var(--positive-color);
+}
+
+.market-change.negative {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--negative-color);
+}
+
+/* Responsive Tasarım Güncellemeleri */
+@media (max-width: 768px) {
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .market-card {
+        margin-bottom: 1rem;
+    }
+
+    .market-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .market-change {
+        position: static;
+        margin-top: 0.5rem;
+    }
+}
+
+/* AI Sohbet Asistanı */
+.chat-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.chat-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.chat-toggle:hover {
+    transform: translateY(-2px);
+}
+
+.chat-toggle i {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    width: 350px;
+    height: 500px;
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-container.active {
+    display: flex;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.chat-header h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 80%;
+}
+
+.message.user {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.message-content {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--background-color);
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.message.user .message-content {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.message-content i {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.message.user .message-content i {
+    color: white;
+}
+
+.message-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--card-background);
+    border-top: 1px solid var(--border-color);
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.chat-input input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.send-message {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-message:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+
+    .chat-toggle {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Oyunlaştırma Stilleri */
+.user-level-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.level-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.level-icon {
+    font-size: 3rem;
+    color: #FFD700;
+}
+
+.level-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.xp-bar {
+    width: 200px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.xp-progress {
+    height: 100%;
+    background: #FFD700;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Günlük Görevler */
+.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.task-card {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+}
+
+.task-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-info h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.task-info p {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+    margin-bottom: 1rem;
+}
+
+.task-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--background-color);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.task-reward {
+    font-size: 0.875rem;
+    color: var(--positive-color);
+    font-weight: 500;
+}
+
+/* Başarı Rozetleri */
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.badge-card {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.badge-card:hover {
+    transform: translateY(-5px);
+}
+
+.badge-card.locked {
+    opacity: 0.5;
+}
+
+.badge-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0 auto 1rem;
+}
+
+.badge-card h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.badge-card p {
+    font-size: 0.875rem;
+    color: var(--neutral-color);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .level-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .xp-bar {
+        width: 100%;
+    }
+
+    .tasks-grid,
+    .badges-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .task-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .task-icon {
+        margin: 0 auto;
+    }
+}
+
+/* Bildirimler */
+.notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--card-background);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s;
+    z-index: 1000;
+}
+
+.notification i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.notification p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.notification.level-up {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.notification.level-up i {
+    color: #FFD700;
+}
+
+.notification.achievement {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
+.notification.achievement i {
+    color: #FFD700;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+} 
